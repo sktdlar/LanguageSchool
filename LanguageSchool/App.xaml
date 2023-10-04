@@ -4,11 +4,17 @@
              xmlns:local="clr-namespace:LanguageSchool"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
+
+        
         <Style TargetType="TextBlock">
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="HorizontalAlignment" Value="Center"/> 
             <Setter Property="VerticalAlignment" Value="Center"/>
             <Setter Property="FontSize" Value="20"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#FF04A0FF"/>
+            <Setter Property="Height" Value="30"/>
         </Style>
     </Application.Resources>
 </Application>

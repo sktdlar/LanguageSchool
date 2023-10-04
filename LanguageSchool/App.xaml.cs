@@ -13,5 +13,6 @@ namespace LanguageSchool
     /// </summary>
     public partial class App : Application
     {
+        public static Components.LanguageSchool db = new Components.LanguageSchool();
     }
 }
