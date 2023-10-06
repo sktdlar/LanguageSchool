@@ -15,4 +15,5 @@ namespace LanguageSchool
     {
         public static Components.LanguageSchool db = new Components.LanguageSchool();
     }
+
 }

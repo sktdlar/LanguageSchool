@@ -1,0 +1,36 @@
+﻿<UserControl x:Class="LanguageSchool.Components.ServiceUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LanguageSchool.Components"
+             mc:Ignorable="d" 
+             d:DesignHeight="200" d:DesignWidth="650"
+             >
+    <Border Margin="10 10 10 10" BorderThickness="3" BorderBrush="Gray">
+    <Grid Width="650">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+        <Image Margin="10 10 10 10" Name="ServiceImg" Grid.RowSpan="4"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Name="TitleTb" Grid.Column="1"></TextBlock>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="1">
+                <TextBlock TextDecorations="Strikethrough" HorizontalAlignment="Left" Name="JustCost" />
+                <TextBlock Margin="0 0 0 0" HorizontalAlignment="Left" Name="CostTb"></TextBlock>
+            </StackPanel>
+        <TextBlock HorizontalAlignment="Left" Name="DiscountTB" Grid.Column="1" Grid.Row="2"></TextBlock>
+        <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
+            <Button Padding="4" BorderThickness="1" Margin="40 0 10 10" Content="Редактировать" x:Name="EditBtn" Background="{x:Null}"/>
+        <Button Padding="4" BorderThickness="1" Margin="0 0 0 10" Content="Удалить" x:Name="DeleteBtn" Background="{x:Null}"/>
+
+        </StackPanel>
+    </Grid>
+</Border>
+</UserControl>

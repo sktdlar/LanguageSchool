@@ -5,19 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LanguageSchool"
         mc:Ignorable="d"
-        Title="Жопа попа" Height="450" Width="800">
-    <Grid>
+        Title="LanguageSchool" Height="450" Width="800"
+>
+    <Grid Background="#FFE7FABF">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="37*"/>
+            <ColumnDefinition Width="363*"/>
+        </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
-            <RowDefinition Height="9*"/>
+            <RowDefinition Height="6*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" VerticalAlignment="Center" Grid.Row="0" Background="#FFE7FABF">
-            <Image HorizontalAlignment="Left" Margin="50 0 0 0" Height="30"  Source="/Sourse/school_logo.png" />
-            <Button Margin="10 0 0 0" Content="Назад" Name="GoBackBtn"   BorderBrush="{x:Null}"/>
-            <Button Margin="10 0 0 0" Content="Вернуться" Name="GoForwardBtn"  BorderBrush="{x:Null}" FontFamily="Comic Sans MS"/>
-        </StackPanel>
-        <Frame Grid.Row="1" Background="Gray" Name="MainFrame" Grid.RowSpan="2">
-            
-        </Frame>
+        <Image Grid.Column="0"  Height="50"  Source="/Sourse/school_logo.png" />
+        <StackPanel Grid.Column="0" Grid.Row="1"  VerticalAlignment="Bottom" >
+                <Button Margin="10 0 0 0" Content="Назад" Name="GoBackBtn"   BorderBrush="{x:Null}"/>
+                <Button Margin="10 0 0 0" Content="Вернуться" Name="GoForwardBtn"  BorderBrush="{x:Null}" FontFamily="Comic Sans MS"/>
+            </StackPanel>
+
+        <Frame Name="MainFrame" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" />
     </Grid>
 </Window>
