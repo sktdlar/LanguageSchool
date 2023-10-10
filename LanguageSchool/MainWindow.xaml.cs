@@ -24,16 +24,44 @@ namespace LanguageSchool
         public MainWindow()
         {
             InitializeComponent();
-            //var path = @"C:\Users\Данил\Desktop\DemoExam\Сессия 1\";
-            //foreach(var item in App.db.Service.ToList())
-            //{
-            //    var fullPath = path + item.MainImagePath.Trim();
-            //    var imageByte = File.ReadAllBytes(fullPath);
-            //    item.MainImage = imageByte;
-            //}
-            //App.db.SaveChanges();
+            var path = @"C:\Users\Данил\Desktop\DemoExam\Сессия 1\";
+            foreach (var item in App.db.Service.ToList())
+            {
+                var fullPath = path + item.MainImagePath.Trim();
+                var imageByte = File.ReadAllBytes(fullPath);
+                item.MainImage = imageByte;
+            }
+            App.db.SaveChanges();
             MainFrame.Navigate(new Pages.ServicePage());
         }
-        
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            if(App.AdmModeBool is false)
+            {
+                if(PassForAdm.Password == "1102210056")
+                {
+                    App.AdmModeBool = true;
+                    MessageBox.Show("Режим админа включен");
+                    AdmModeCheck.Visibility = Visibility.Visible;
+                    PassForAdm.Password = "";
+                    
+                    MainFrame.Navigate(new Pages.ServicePage());
+                }
+                else
+                {
+                    MessageBox.Show("Все неправильно!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                    PassForAdm.Password = "";
+                }
+            }
+            else
+            {
+                App.AdmModeBool = false;
+                MessageBox.Show("Режим админа выключен");
+                AdmModeCheck.Visibility = Visibility.Collapsed;
+                PassForAdm.Password = "";
+                MainFrame.Navigate(new Pages.ServicePage());
+
+            }
+        }
     }
 }

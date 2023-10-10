@@ -14,6 +14,7 @@ namespace LanguageSchool
     public partial class App : Application
     {
         public static Components.LanguageSchool db = new Components.LanguageSchool();
+        public static bool AdmModeBool = false;
     }
 
 }

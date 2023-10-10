@@ -21,22 +21,31 @@ namespace LanguageSchool.Components
     /// </summary>
     public partial class ServiceUserControl : UserControl
     {
-        public ServiceUserControl(byte[] image, string title, decimal cost, string CostTime, string discount, Visibility CostVisibility)
+        public ServiceUserControl(byte[] image, string title, decimal cost, string CostTime,string DiscountString, Visibility CostVisibility)
         {
             InitializeComponent();
-            
-                BitmapImage biImg = new BitmapImage();
-                MemoryStream ms = new MemoryStream(image);
-                biImg.BeginInit();
-                biImg.StreamSource = ms;
-                biImg.EndInit();
-                ImageSource imgSrc = biImg as ImageSource;
+            if(App.AdmModeBool)
+            {
+                EditBtn.Visibility = Visibility.Visible;
+                DeleteBtn.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                EditBtn.Visibility = Visibility.Collapsed;
+                DeleteBtn.Visibility = Visibility.Collapsed;
+            }
+            BitmapImage biImg = new BitmapImage();
+            MemoryStream ms = new MemoryStream(image);
+            biImg.BeginInit();
+            biImg.StreamSource = ms;
+            biImg.EndInit();
+            ImageSource imgSrc = biImg as ImageSource;
 
-            JustCost.Text = cost.ToString() + " ";
-            ServiceImg.Source =  imgSrc;
+            JustCost.Text = $"{cost:0} "; 
+            ServiceImg.Source = imgSrc;
             TitleTb.Text = title;
             CostTb.Text = CostTime;
-            DiscountTB.Text = discount;
+            DiscountTB.Text = DiscountString;
             JustCost.Visibility = CostVisibility;
 
         }

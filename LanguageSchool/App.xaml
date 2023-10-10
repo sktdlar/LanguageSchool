@@ -10,12 +10,12 @@
             <Setter Property="FontFamily" Value="Comic Sans MS"/>
             <Setter Property="HorizontalAlignment" Value="Center"/> 
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="FontSize" Value="20"/>
+            <Setter Property="FontSize" Value="10"/>
         </Style>
         <Style TargetType="Button">
+            
             <Setter Property="Background" Value="#FF04A0FF"/>
             <Setter Property="Height" Value="30"/>
-            <Setter Property="FontSize" Value="12"/>
         </Style>
     </Application.Resources>
 </Application>

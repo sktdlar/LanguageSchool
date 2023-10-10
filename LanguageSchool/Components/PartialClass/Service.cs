@@ -20,10 +20,21 @@ namespace LanguageSchool.Components
                 }
                 else
                 {
-                    return $"{Cost - Cost * (decimal)Discount / 100:0} рублей за {DurationInSeconds / 60} минут";
+                    return $"{(double)Cost - (double)Cost / 100 * Discount:0} рублей за {DurationInSeconds / 60} минут";
                 }
             }
             
+        }
+        public string DiscountString
+        {
+            get
+            {
+                if (Discount is null)
+                {
+                    return "";
+                }
+                else { return $"Скидка {Discount}%"; }
+            }
         }
         public Visibility CostVisibility { get
             {

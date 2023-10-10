@@ -5,10 +5,10 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:LanguageSchool.Components"
              mc:Ignorable="d" 
-             d:DesignHeight="200" d:DesignWidth="650"
+             d:DesignHeight="200" d:DesignWidth="550"
              >
     <Border Margin="10 10 10 10" BorderThickness="3" BorderBrush="Gray">
-    <Grid Width="650">
+    <Grid Width="550">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -25,10 +25,10 @@
                 <TextBlock TextDecorations="Strikethrough" HorizontalAlignment="Left" Name="JustCost" />
                 <TextBlock Margin="0 0 0 0" HorizontalAlignment="Left" Name="CostTb"></TextBlock>
             </StackPanel>
-        <TextBlock HorizontalAlignment="Left" Name="DiscountTB" Grid.Column="1" Grid.Row="2"></TextBlock>
+            <TextBlock HorizontalAlignment="Left" Name="DiscountTB" Grid.Column="1" Grid.Row="2"></TextBlock>
         <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
-            <Button Padding="4" BorderThickness="1" Margin="40 0 10 10" Content="Редактировать" x:Name="EditBtn" Background="{x:Null}"/>
-        <Button Padding="4" BorderThickness="1" Margin="0 0 0 10" Content="Удалить" x:Name="DeleteBtn" Background="{x:Null}"/>
+            <Button Padding="4" BorderThickness="1" Margin="40 0 10 10" Content="Редактировать" x:Name="EditBtn" />
+        <Button Padding="4" BorderThickness="1" Margin="0 0 0 10" Content="Удалить" x:Name="DeleteBtn" />
 
         </StackPanel>
     </Grid>

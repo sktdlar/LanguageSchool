@@ -24,12 +24,15 @@ namespace LanguageSchool.Pages
         public ServicePage()
         {
             InitializeComponent();
+            if(!App.AdmModeBool){AddBtn.Visibility = Visibility.Hidden;}
+            else { AddBtn.Visibility = Visibility.Visible;}
             var services = App.db.Service.ToList();
             foreach (var service in services)
             {
                 ServiceWrapPanel.Children.Add(
-                    new ServiceUserControl(service.MainImage, service.Title, service.Cost, service.CostTime, service.Discount.ToString(), service.CostVisibility));
+                    new ServiceUserControl(service.MainImage, service.Title, service.Cost, service.CostTime, service.DiscountString, service.CostVisibility));
             }
+            
         }
     }
 }
