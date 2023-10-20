@@ -64,6 +64,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="TestWind.xaml.cs">
+      <DependentUpon>TestWind.xaml</DependentUpon>
+    </Compile>
     <Page Include="Components\ServiceUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -139,6 +142,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="TestWind.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Pages\ServicePage.xaml.cs">
@@ -179,7 +186,7 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
-    <Resource Include="Sourse\school_logo.png" />
+    <Resource Include="Pages\Sourse\school_logo.png" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Components\Model1.Context.tt">

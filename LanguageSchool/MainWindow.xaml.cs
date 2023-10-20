@@ -24,24 +24,25 @@ namespace LanguageSchool
         public MainWindow()
         {
             InitializeComponent();
-            var path = @"C:\Users\Данил\Desktop\DemoExam\Сессия 1\";
-            foreach (var item in App.db.Service.ToList())
-            {
-                var fullPath = path + item.MainImagePath.Trim();
-                var imageByte = File.ReadAllBytes(fullPath);
-                item.MainImage = imageByte;
-            }
-            App.db.SaveChanges();
+            //var path = @"C:\Users\Данил\Desktop\DemoExam\Сессия 1\";
+            //foreach (var item in App.db.Service.ToList())
+            //{
+            //    var fullPath = path + item.MainImagePath.Trim();
+            //    var imageByte = File.ReadAllBytes(fullPath);
+            //    item.MainImage = imageByte;
+            ////}
+            //App.db.SaveChanges();
             MainFrame.Navigate(new Pages.ServicePage());
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             if(App.AdmModeBool is false)
             {
-                if(PassForAdm.Password == "1102210056")
+                if(PassForAdm.Password == "0")
                 {
                     App.AdmModeBool = true;
                     MessageBox.Show("Режим админа включен");
+                    
                     AdmModeCheck.Visibility = Visibility.Visible;
                     PassForAdm.Password = "";
                     
@@ -49,7 +50,7 @@ namespace LanguageSchool
                 }
                 else
                 {
-                    MessageBox.Show("Все неправильно!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                    MessageBox.Show("Неправильный пароль");
                     PassForAdm.Password = "";
                 }
             }
@@ -61,6 +62,19 @@ namespace LanguageSchool
                 PassForAdm.Password = "";
                 MainFrame.Navigate(new Pages.ServicePage());
 
+            }
+        }
+
+        private void GoBackBtn_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+            MainFrame.GoBack();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

@@ -21,9 +21,11 @@ namespace LanguageSchool.Components
     /// </summary>
     public partial class ServiceUserControl : UserControl
     {
-        public ServiceUserControl(byte[] image, string title, decimal cost, string CostTime,string DiscountString, Visibility CostVisibility)
+        Service service;
+        public ServiceUserControl(Service _service)
         {
             InitializeComponent();
+            service = _service;
             if(App.AdmModeBool)
             {
                 EditBtn.Visibility = Visibility.Visible;
@@ -34,20 +36,47 @@ namespace LanguageSchool.Components
                 EditBtn.Visibility = Visibility.Collapsed;
                 DeleteBtn.Visibility = Visibility.Collapsed;
             }
-            BitmapImage biImg = new BitmapImage();
+            //byte[] image, string title, decimal cost, string CostTime,string DiscountString, Visibility CostVisibility
+            JustCost.Text = $"{service.Cost:0} "; 
+            ServiceImg.Source = GetImageSource(service.MainImage);
+            TitleTb.Text = service.Title;
+            CostTb.Text = service.CostTime;
+            DiscountTB.Text = service.DiscountString;
+            JustCost.Visibility = service.CostVisibility;
+            MainBorder.Background = service.DiscountBrush;
+
+        }
+        private static ImageSource GetImageSource(byte[] image)
+        {
+
+            BitmapImage biImg = new BitmapImage(); 
+            try
+            {
             MemoryStream ms = new MemoryStream(image);
             biImg.BeginInit();
             biImg.StreamSource = ms;
             biImg.EndInit();
-            ImageSource imgSrc = biImg as ImageSource;
+            }
+            catch
+            {
+                MessageBox.Show("error");
+            }
+            
+                return biImg as ImageSource;
+            
+            
+        }
 
-            JustCost.Text = $"{cost:0} "; 
-            ServiceImg.Source = imgSrc;
-            TitleTb.Text = title;
-            CostTb.Text = CostTime;
-            DiscountTB.Text = DiscountString;
-            JustCost.Visibility = CostVisibility;
-
+        private void DeleteBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (service.ClientService != null)
+            {
+                MessageBox.Show("Удаление запрещено");
+            }
+            else
+            {
+                MessageBox.Show("все удалилось");
+            }
         }
     }
 }

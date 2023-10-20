@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LanguageSchool"
         mc:Ignorable="d"
-        Title="LanguageSchool" Height="450" Width="800"
+        Title="LanguageSchool" Height="600" Width="1000"
 >
     <Grid Background="#FFE7FABF">
         <Grid.ColumnDefinitions>
@@ -21,8 +21,7 @@
         <Image Grid.Column="0"  Height="50"  Source="/Sourse/school_logo.png" Margin="0,2,0,2" />
         <StackPanel Grid.Column="0" Grid.Row="1" VerticalAlignment="Bottom" Grid.RowSpan="2" >
             <Ellipse Name="AdmModeCheck" HorizontalAlignment="Left" Visibility="Collapsed" Width="10" Height="10" Fill="Red"></Ellipse>
-            <Button Margin="10 0 0 0" Content="Назад" Name="GoBackBtn"   BorderBrush="{x:Null}"/>
-            <Button Margin="10 0 0 0" Content="Вернуться" Name="GoForwardBtn"  BorderBrush="{x:Null}"/>
+            <Button Margin="10 0 0 0" Content="Назад" Name="GoBackBtn"   BorderBrush="{x:Null}" Click="GoBackBtn_Click"/>
                 <Button Margin="10 0 0 0" BorderBrush="{x:Null}" Click="Button_Click">
                 
                 <TextBlock TextAlignment="Center">Режим<LineBreak/>админа
