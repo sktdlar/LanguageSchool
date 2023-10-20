@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LanguageSchool.Components;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -32,7 +33,8 @@ namespace LanguageSchool
             //    item.MainImage = imageByte;
             ////}
             //App.db.SaveChanges();
-            MainFrame.Navigate(new Pages.ServicePage());
+            Navigation.mainWindow = this;
+            Navigation.NextPage(new PageComponent( new Pages.ServicePage(), "ServicePage"));
         }
         private void Button_Click(object sender, RoutedEventArgs e)
         {
@@ -45,8 +47,9 @@ namespace LanguageSchool
                     
                     AdmModeCheck.Visibility = Visibility.Visible;
                     PassForAdm.Password = "";
+                    Navigation.ClearComponents();
+                    Navigation.NextPage(new PageComponent(new Pages.ServicePage(), "ServicePage"));
                     
-                    MainFrame.Navigate(new Pages.ServicePage());
                 }
                 else
                 {
@@ -60,22 +63,14 @@ namespace LanguageSchool
                 MessageBox.Show("Режим админа выключен");
                 AdmModeCheck.Visibility = Visibility.Collapsed;
                 PassForAdm.Password = "";
-                MainFrame.Navigate(new Pages.ServicePage());
-
+                Navigation.NextPage(new PageComponent(new Pages.ServicePage(), "ServicePage"));
+                Navigation.ClearComponents() ;
             }
         }
 
         private void GoBackBtn_Click(object sender, RoutedEventArgs e)
         {
-            try
-            {
-            MainFrame.GoBack();
-
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
+            Navigation.BackPage();
         }
     }
 }

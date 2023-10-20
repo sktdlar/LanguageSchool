@@ -44,6 +44,7 @@ namespace LanguageSchool.Components
             DiscountTB.Text = service.DiscountString;
             JustCost.Visibility = service.CostVisibility;
             MainBorder.Background = service.DiscountBrush;
+            
 
         }
         private static ImageSource GetImageSource(byte[] image)
