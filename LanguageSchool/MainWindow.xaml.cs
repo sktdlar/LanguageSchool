@@ -63,8 +63,9 @@ namespace LanguageSchool
                 MessageBox.Show("Режим админа выключен");
                 AdmModeCheck.Visibility = Visibility.Collapsed;
                 PassForAdm.Password = "";
-                Navigation.NextPage(new PageComponent(new Pages.ServicePage(), "ServicePage"));
                 Navigation.ClearComponents() ;
+                Navigation.NextPage(new PageComponent(new Pages.ServicePage(), "ServicePage"));
+                
             }
         }
 

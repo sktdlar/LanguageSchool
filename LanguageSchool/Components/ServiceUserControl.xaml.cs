@@ -21,7 +21,7 @@ namespace LanguageSchool.Components
     /// </summary>
     public partial class ServiceUserControl : UserControl
     {
-        Service service;
+        public static Service service { get; set; }
         public ServiceUserControl(Service _service)
         {
             InitializeComponent();
@@ -53,10 +53,21 @@ namespace LanguageSchool.Components
             BitmapImage biImg = new BitmapImage(); 
             try
             {
-            MemoryStream ms = new MemoryStream(image);
+                if (service.MainImage != null) 
+                {
+                    MemoryStream ms = new MemoryStream(image);
             biImg.BeginInit();
             biImg.StreamSource = ms;
             biImg.EndInit();
+                }
+                else
+                {
+                    MemoryStream ms = new MemoryStream(File.ReadAllBytes("\\Sourse\\school_logo.png"));
+                    biImg.BeginInit();
+                    biImg.StreamSource = ms;
+                    biImg.EndInit();
+                }
+            
             }
             catch
             {
@@ -78,6 +89,11 @@ namespace LanguageSchool.Components
             {
                 MessageBox.Show("все удалилось");
             }
+        }
+
+        private void EditBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent( new Pages.AddEditPage(service), "ИЗМЕНЕНИЕ УСЛУГИ"));
         }
     }
 }

@@ -39,7 +39,7 @@
             </WrapPanel>
         </ScrollViewer>
         <StackPanel Margin="200 0 0 0" Orientation="Horizontal" Grid.Row="2">
-            <Button Width="400" Visibility="Visible" x:Name="AddBtn" Margin="10,10,10,10" Height="NaN"  Content="Добавить"/>
+            <Button Width="400" Visibility="Visible" x:Name="AddBtn" Margin="10,10,10,10" Height="NaN"  Content="Добавить" Click="AddBtn_Click"/>
             <TextBox Name="CountOfItems" VerticalAlignment="Center"></TextBox>
            </StackPanel>
 

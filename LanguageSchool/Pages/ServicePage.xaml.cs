@@ -102,6 +102,10 @@ namespace LanguageSchool.Pages
             CountOfItems.Text = $"{services.Count()} из {App.db.Service.Count()}";
         }
 
-        
+        private void AddBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent(new Pages.AddEditPage(new Service()), "ДОБАВЛЕНИЕ УСЛУГИ"));
+
+        }
     }
 }
