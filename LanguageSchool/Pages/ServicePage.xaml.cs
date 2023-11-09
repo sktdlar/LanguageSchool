@@ -107,5 +107,15 @@ namespace LanguageSchool.Pages
             Navigation.NextPage(new PageComponent(new Pages.AddEditPage(new Service()), "ДОБАВЛЕНИЕ УСЛУГИ"));
 
         }
+
+        private void Page_Loaded(object sender, RoutedEventArgs e)
+        {
+            Refresh();
+        }
+
+        private void AllRecords_Click(object sender, RoutedEventArgs e)
+        {
+            Navigation.NextPage(new PageComponent(new Pages.UpcomingEntriesPage(), "Все записи")) ;
+        }
     }
 }

@@ -65,12 +65,27 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Components\Navigation.cs" />
+    <Compile Include="Components\PartialClass\Client.cs" />
+    <Compile Include="Components\PartialClass\ClientService.cs" />
+    <Compile Include="Components\ServiceImageUC.xaml.cs">
+      <DependentUpon>ServiceImageUC.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AddEditPage.xaml.cs">
       <DependentUpon>AddEditPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ClientRecordPage.xaml.cs">
+      <DependentUpon>ClientRecordPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UpcomingEntriesPage.xaml.cs">
+      <DependentUpon>UpcomingEntriesPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="TestWind.xaml.cs">
       <DependentUpon>TestWind.xaml</DependentUpon>
     </Compile>
+    <Page Include="Components\ServiceImageUC.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Components\ServiceUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -146,7 +161,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ClientRecordPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\ServicePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\UpcomingEntriesPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

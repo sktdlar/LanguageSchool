@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LanguageSchool.Pages;
+using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Data;
@@ -15,6 +16,7 @@ namespace LanguageSchool
     {
         public static Components.LanguageSchool db = new Components.LanguageSchool();
         public static bool AdmModeBool = false;
+        public static AddEditPage servicePage;
     }
 
 }

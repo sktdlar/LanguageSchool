@@ -27,10 +27,11 @@
             </StackPanel>
             <TextBlock HorizontalAlignment="Left" Name="DiscountTB" Grid.Column="1" Grid.Row="2"></TextBlock>
         <StackPanel HorizontalAlignment="Left" Grid.Column="1" Grid.Row="4" Orientation="Horizontal">
-            <Button Padding="4" BorderThickness="1" Margin="40 0 10 10" Content="Редактировать" x:Name="EditBtn" Click="EditBtn_Click" />
-        <Button Padding="4" BorderThickness="1" Margin="0 0 0 10" Content="Удалить" x:Name="DeleteBtn" Click="DeleteBtn_Click" />
+            <Button Padding="4" BorderThickness="1" Margin="20 0 10 10" Content="Редактировать" x:Name="EditBtn" Click="EditBtn_Click" />
+                <Button Padding="4" BorderThickness="1" Margin="0 0 0 10" Content="Удалить" x:Name="DeleteBtn" Click="DeleteBtn_Click" />
 
-        </StackPanel>
+                <Button Padding="4" BorderThickness="1" Margin="10 0 0 10" Content="Записать" x:Name="RecordBtn" Click="Record_Click"/>
+            </StackPanel>
     </Grid>
 </Border>
 </UserControl>

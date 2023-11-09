@@ -10,17 +10,25 @@
 
     <Grid Margin="10">
         <Grid.RowDefinitions>
-            <RowDefinition Height="146*"/>
-            <RowDefinition Height="69*"/>
+            <RowDefinition Height="17*"/>
+            <RowDefinition Height="26*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="249*"/>
             <ColumnDefinition Width="551*"/>
         </Grid.ColumnDefinitions>
 
-        <Image  VerticalAlignment="Top" Height="100" HorizontalAlignment="Left" Margin="40,40,0,0" x:Name="ServiceImage"  Source="{Binding MainImage}" Width="100" />
-        <StackPanel  VerticalAlignment="Top" Height="80" Margin="0,143,537,0" Grid.ColumnSpan="2">
-            <Button Name="AddImage" Margin="10" Click="AddImage_Click">Изменить изображение</Button>
+        <!--<StackPanel  VerticalAlignment="Center"  HorizontalAlignment="Center" Height="170" Width="243">-->
+            <Image VerticalAlignment="Center" Height="150" Width="159" HorizontalAlignment="Center" Margin="10" Name="ServiceImage"  Source="{Binding MainImage}" />
+            <Button Name="AddImage" Margin="10" VerticalAlignment="Bottom" Click="AddImage_Click">Изменить  изображение</Button>
+        <!--</StackPanel>-->
+        <StackPanel VerticalAlignment="Center" Grid.Row="1"  HorizontalAlignment="Center"  Width="243" Height="300">
+            <ScrollViewer x:Name="ScrollWrap" VerticalScrollBarVisibility="Disabled" HorizontalScrollBarVisibility="Visible" Height="225">
+                <WrapPanel  Name="ServicePhotoWrap">
+
+                </WrapPanel>
+            </ScrollViewer>
+            <Button Name="AddNewImages" Margin="10" Click="AddNewImages_Click">Добавить изображения</Button>
         </StackPanel>
         <StackPanel Margin="10,10,10,10" Grid.Column="1">
             <StackPanel Orientation="Horizontal">
@@ -29,23 +37,25 @@
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock Margin="10">Наименование услуги</TextBlock>
-                <TextBox Text="{Binding Title}" Name="ServiceNameTb" Width="200" TextWrapping="Wrap" FontSize="12"></TextBox>
+                <TextBox Text="{Binding Title}" Name="ServiceNameTb" Width="200" TextWrapping="Wrap" FontSize="12" TextChanged="ServiceNameTb_TextChanged"></TextBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock HorizontalAlignment="Left" Margin="10">Цена</TextBlock>
-                <TextBox Text="{Binding Cost}" Name="ServiceCostTb" Width="100" TextWrapping="Wrap" FontSize="20"></TextBox>
+                <TextBox Text="{Binding Cost}" Name="ServiceCostTb" Width="100" TextWrapping="Wrap" FontSize="20" PreviewTextInput="ServiceCostTb_PreviewTextInput"></TextBox>
                 <TextBlock HorizontalAlignment="Left" Margin="10">Длительность</TextBlock>
-                <TextBox Text="{Binding DurationInSeconds}" Name="ServicwDurationTb" Width="100" TextWrapping="Wrap" FontSize="20"></TextBox>
+                <TextBox Text="{Binding DurationInSeconds}" Name="ServiceDurationTb" Width="100" TextWrapping="Wrap" FontSize="20"  PreviewTextInput="ServiceCostTb_PreviewTextInput"></TextBox>
             </StackPanel>
             <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
                 <TextBlock Margin="10">Скидка</TextBlock>
-                <TextBox Text="{Binding Discount}" Name="ServiceDiscountTb" Width="50" TextWrapping="Wrap" FontSize="20"></TextBox>
+                <TextBox Text="{Binding Discount}" Name="ServiceDiscountTb" Width="50" TextWrapping="Wrap" FontSize="20" PreviewTextInput="ServiceCostTb_PreviewTextInput"></TextBox>
             </StackPanel>
 
         </StackPanel>
-        <TextBox Text="{Binding Description}" Grid.Row="1" Width="NaN" Height="NaN" FontSize="12" Grid.Column="1" Margin="99,13,100,14"></TextBox>
-        <TextBlock Name="ServiceDescriptionTb" Grid.Row="1" VerticalAlignment="Top" Width="97">Описание</TextBlock>
-        <Button Name="SaveBtn" Margin="40" Grid.Row="1" VerticalAlignment="Bottom" Height="30" Click="SaveBtn_Click">Сохранить</Button>
+        <StackPanel Grid.Row="1" Grid.Column="1">
+            <TextBlock Name="ServiceDescriptionTb" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top" Width="97" Height="28">Описание</TextBlock>
+            <TextBox Text="{Binding Description}" Grid.Row="1" Width="NaN" Name="DescriptionTb" FontSize="12" Grid.Column="1" Margin="10 10 10 10" Height="175"></TextBox>
+            <Button Name="SaveBtn" Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom" Height="30" Click="SaveBtn_Click">Сохранить</Button>
+        </StackPanel>
 
     </Grid>
 </Page>

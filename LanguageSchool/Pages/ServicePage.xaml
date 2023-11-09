@@ -7,7 +7,8 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="ServiceListPage"
-      Background="White">
+      Background="White"
+      Loaded="Page_Loaded">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -38,8 +39,9 @@
 
             </WrapPanel>
         </ScrollViewer>
-        <StackPanel Margin="200 0 0 0" Orientation="Horizontal" Grid.Row="2">
-            <Button Width="400" Visibility="Visible" x:Name="AddBtn" Margin="10,10,10,10" Height="NaN"  Content="Добавить" Click="AddBtn_Click"/>
+        <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="2">
+            <Button Width="200" Visibility="Visible" x:Name="AddBtn" Margin="10,10,10,10" Height="NaN"  Content="Добавить" Click="AddBtn_Click"/>
+            <Button Width="200" Visibility="Visible" x:Name="AllRecords" Margin="10,10,10,10" Height="NaN"  Content="Все записи" Click="AllRecords_Click"/>
             <TextBox Name="CountOfItems" VerticalAlignment="Center"></TextBox>
            </StackPanel>
 
